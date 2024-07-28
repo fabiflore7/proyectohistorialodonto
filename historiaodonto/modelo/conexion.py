@@ -5,6 +5,9 @@ class ConexionDB:
         self.baseDatos = 'database/dbhistorialodonto.db'
         self.conexion = sqlite3.connect(self.baseDatos)
         self.cursor = self.conexion.cursor()
+        
+    def commit(self):
+        self.conexion.commit()
     
     def cerrarConexion(self):
         self.conexion.commit()
